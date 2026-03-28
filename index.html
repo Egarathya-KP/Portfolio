@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Egarathya K P | Portfolio</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-navy: #1e293b;
-            --accent-blue: #3b82f6;
-            --soft-blue: #eff6ff;
-            --text-main: #334155;
-            --text-light: #64748b;
+            --primary-navy: #0f172a;
+            --accent-blue: #2563eb;
+            /* Very light, almost transparent blue shade */
+            --bg-light-blue: #f0f7ff; 
+            --glass-bg: rgba(255, 255, 255, 0.6);
+            --text-main: #1e293b;
+            --text-light: #475569;
             --white: #ffffff;
-            --transition: all 0.3s ease;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         * {
@@ -33,7 +35,9 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: var(--text-main);
-            background-color: var(--white);
+            /* Soft Blue Gradient Background */
+            background: linear-gradient(135deg, #ffffff 0%, #e0f0ff 100%);
+            background-attachment: fixed;
         }
 
         /* --- Global Layout --- */
@@ -47,25 +51,27 @@
         }
 
         h2.section-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary-navy);
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
             text-align: center;
-            position: relative;
+            letter-spacing: -0.5px;
         }
 
         h2.section-title::after {
             content: '';
             display: block;
-            width: 50px;
-            height: 3px;
+            width: 40px;
+            height: 4px;
             background: var(--accent-blue);
-            margin: 10px auto;
+            margin: 12px auto;
+            border-radius: 2px;
         }
 
         /* --- Navigation --- */
         nav {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px); /* Transparent glass effect */
             padding: 1rem 10%;
             display: flex;
             justify-content: space-between;
@@ -74,12 +80,12 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .logo {
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--primary-navy);
             text-decoration: none;
         }
@@ -90,13 +96,14 @@
         }
 
         .nav-links li {
-            margin-left: 2rem;
+            margin-left: 2.5rem;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text-main);
             font-weight: 500;
+            font-size: 0.95rem;
             transition: var(--transition);
         }
 
@@ -112,32 +119,36 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: radial-gradient(circle at top right, var(--soft-blue) 0%, white 50%);
             padding-top: 80px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: var(--primary-navy);
             margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
         .hero p.role {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--accent-blue);
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             margin-bottom: 1rem;
         }
 
         .hero p.tagline {
-            max-width: 600px;
+            max-width: 650px;
             color: var(--text-light);
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
         }
 
         .btn {
-            padding: 12px 30px;
-            border-radius: 5px;
+            padding: 14px 35px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
@@ -147,38 +158,54 @@
         .btn-primary {
             background: var(--accent-blue);
             color: white;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            background: #2563eb;
+            transform: translateY(-4px);
+            box-shadow: 0 15px 25px rgba(37, 99, 235, 0.3);
         }
 
         /* --- About Section --- */
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 1fr;
             gap: 4rem;
             align-items: center;
         }
 
+        /* Academic Stats Style */
         .stats-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
         }
 
         .stat-card {
-            background: var(--soft-blue);
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
             padding: 1.5rem;
-            border-radius: 10px;
+            border-radius: 15px;
             text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: scale(1.03);
         }
 
         .stat-card h3 {
             color: var(--accent-blue);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-light);
         }
 
         /* --- Skills Section --- */
@@ -186,146 +213,98 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
         .skill-badge {
-            background: white;
-            border: 1px solid #e2e8f0;
-            padding: 10px 20px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 12px 25px;
             border-radius: 50px;
             display: flex;
             align-items: center;
             gap: 10px;
+            font-weight: 500;
             transition: var(--transition);
         }
 
         .skill-badge:hover {
+            background: var(--accent-blue);
+            color: white;
             border-color: var(--accent-blue);
-            color: var(--accent-blue);
-            transform: translateY(-2px);
         }
 
-        /* --- Projects Section --- */
+        /* --- Project Cards (Glass Look) --- */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
         .card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.4);
             transition: var(--transition);
-            border: 1px solid #f1f5f9;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .card h3 {
-            margin-bottom: 1rem;
-            color: var(--primary-navy);
-        }
-
-        .card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
+            transform: translateY(-12px);
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
         }
 
         .card-link {
             color: var(--accent-blue);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
-            gap: 5px;
-        }
-
-        /* --- Interests & Certs --- */
-        .interest-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: #f8fafc;
-            border-radius: 8px;
+            gap: 8px;
+            margin-top: 1.5rem;
         }
 
         /* --- Contact Section --- */
         .contact-content {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
             text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 3rem;
             margin-top: 2rem;
-        }
-
-        .contact-item {
-            text-decoration: none;
-            color: var(--primary-navy);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            transition: var(--transition);
-        }
-
-        .contact-item i {
-            font-size: 2rem;
-            color: var(--accent-blue);
-        }
-
-        .contact-item:hover {
-            color: var(--accent-blue);
         }
 
         /* --- Footer --- */
         footer {
             background: var(--primary-navy);
-            color: white;
-            padding: 3rem 10%;
+            color: rgba(255,255,255,0.7);
+            padding: 4rem 10%;
             text-align: center;
         }
 
-        .social-icons {
-            margin-bottom: 1rem;
-        }
-
-        .social-icons a {
-            color: white;
-            margin: 0 10px;
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
-
-        .social-icons a:hover {
-            color: var(--accent-blue);
-        }
-
-        /* --- Mobile Responsiveness --- */
         @media (max-width: 768px) {
             .about-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Simplified for this template */
-            section { padding: 60px 5%; }
+            .hero h1 { font-size: 2.8rem; }
+            .nav-links { display: none; }
+            section { padding: 80px 5%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav>
-        <a href="#" class="logo">Egarathya.</a>
+        <a href="#" class="logo">Egarathya K P</a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -334,167 +313,103 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <p class="role">First Year CSE Student @ VIT Vellore</p>
+    <section class="hero">
+        <p class="role">Computer Science Student @ VIT Vellore</p>
         <h1>Egarathya K P</h1>
-        <p class="tagline">Passionate about AI, Space Physics, and Quantum Mechanics. Dedicated to building intelligent systems that solve real-world complexities.</p>
-        <div style="margin-top: 20px;">
-            <a href="#projects" class="btn btn-primary">View Projects</a>
+        <p class="tagline">Harnessing AI, Space Physics, and Quantum Mechanics to engineer technology for a better future.</p>
+        <div>
+            <a href="#projects" class="btn btn-primary">Discover My Work</a>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">Background</h2>
             <div class="about-grid">
                 <div>
-                    <p>I am a highly motivated Computer Science student at <strong>Vellore Institute of Technology</strong> with a current <strong>CGPA of 9.5</strong>. My journey is fueled by a deep curiosity about how the universe works and how technology can bridge the gap between theoretical physics and practical application.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">
+                        I am a first-year Computer Science student at <strong>VIT Vellore</strong> with a relentless drive for academic excellence and technical innovation. 
+                        With a foundation in Python and Data Science, I explore the intersections of <strong>Artificial Intelligence</strong> and <strong>Theoretical Physics</strong>.
+                    </p>
                     <br>
-                    <p>I focus on leveraging Artificial Intelligence to solve real-world problems, drawing inspiration from the structured complexities of Space Physics and Quantum Mechanics.</p>
+                    <p>I am motivated by solving real-world challenges through code, whether it's optimizing crowd management or forecasting complex time-series data.</p>
                 </div>
                 <div class="stats-grid">
                     <div class="stat-card">
                         <h3>9.5</h3>
-                        <p>Current CGPA</p>
+                        <p>CGPA</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>90.1%</h3>
+                        <p>JEE PERCENTILE</p>
                     </div>
                     <div class="stat-card">
                         <h3>94.4%</h3>
-                        <p>10th Grade</p>
+                        <p>10th GRADE</p>
                     </div>
                     <div class="stat-card">
                         <h3>90.4%</h3>
-                        <p>12th Grade</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>CSE</h3>
-                        <p>Specialization</p>
+                        <p>12th GRADE</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" style="background-color: var(--soft-blue);">
+    <section id="skills">
         <div class="container">
-            <h2 class="section-title">Technical Expertise</h2>
+            <h2 class="section-title">Skills & Technologies</h2>
             <div class="skills-container">
                 <div class="skill-badge"><i class="fab fa-python"></i> Python</div>
-                <div class="skill-badge"><i class="fas fa-chart-line"></i> Data Analysis</div>
-                <div class="skill-badge"><i class="fas fa-clock"></i> Time Series Forecasting</div>
-                <div class="skill-badge"><i class="fas fa-robot"></i> Artificial Intelligence</div>
-                <div class="skill-badge"><i class="fas fa-brain"></i> Problem Solving</div>
+                <div class="skill-badge"><i class="fas fa-brain"></i> Artificial Intelligence</div>
+                <div class="skill-badge"><i class="fas fa-chart-bar"></i> Data Analysis</div>
+                <div class="skill-badge"><i class="fas fa-history"></i> Time Series</div>
+                <div class="skill-badge"><i class="fas fa-microchip"></i> Problem Solving</div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">Innovative Projects</h2>
             <div class="grid-container">
-                <!-- Project 1 -->
                 <div class="card">
-                    <h3>Time Series Forecasting</h3>
-                    <p>A predictive model developed using Python and Machine Learning techniques to analyze and forecast time-based data patterns with high accuracy.</p>
-                    <a href="https://github.com/Egarathya-KP/time-series-forecasting" target="_blank" class="card-link">
-                        View Code <i class="fab fa-github"></i>
-                    </a>
+                    <h3 style="margin-bottom:10px;">Time Series Forecasting</h3>
+                    <p>Advanced predictive modeling using Machine Learning to identify patterns and forecast future trends in temporal data.</p>
+                    <a href="https://github.com/Egarathya-KP/time-series-forecasting" target="_blank" class="card-link">VIEW PROJECT <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <!-- Project 2 -->
                 <div class="card">
-                    <h3>Crowd Density Management</h3>
-                    <p>An intelligent system designed to monitor and manage crowd density efficiently, utilizing computer vision principles for real-time tracking.</p>
-                    <a href="https://github.com/Egarathya-KP/crowd-density-tracker" target="_blank" class="card-link">
-                        View Code <i class="fab fa-github"></i>
-                    </a>
+                    <h3 style="margin-bottom:10px;">Crowd Density Management</h3>
+                    <p>A smart system leveraging computer vision to monitor and manage human density in real-time for safety and efficiency.</p>
+                    <a href="https://github.com/Egarathya-KP/crowd-density-tracker" target="_blank" class="card-link">VIEW PROJECT <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certifications & Interests -->
-    <section id="extras" style="background-color: #fcfcfc;">
-        <div class="container">
-            <div class="about-grid">
-                <div>
-                    <h2 class="section-title" style="text-align: left;">Certifications</h2>
-                    <div class="interest-item">
-                        <i class="fas fa-certificate" style="color: var(--accent-blue);"></i>
-                        <div>
-                            <strong>IBM Professional Certificate</strong>
-                            <p style="font-size: 0.9rem; color: var(--text-light);">AI Engineering</p>
-                        </div>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-award" style="color: var(--accent-blue);"></i>
-                        <div>
-                            <strong>Advanced Python for Data Science</strong>
-                            <p style="font-size: 0.9rem; color: var(--text-light);">Online Certification</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="section-title" style="text-align: left;">Core Interests</h2>
-                    <div class="skills-container" style="justify-content: flex-start;">
-                        <div class="skill-badge">Space Physics</div>
-                        <div class="skill-badge">Quantum Mechanics</div>
-                        <div class="skill-badge">Neural Networks</div>
-                        <div class="skill-badge">Astrophysics</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
-                <p>I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+                <h2 class="section-title">Let's Connect</h2>
+                <p>Always looking for interesting collaborations in AI and Physics.</p>
                 <div class="contact-links">
-                    <a href="mailto:egarathyakp07@gmail.com" class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>Email Me</span>
+                    <a href="mailto:egarathyakp07@gmail.com" style="text-decoration:none; color:inherit;">
+                        <i class="fas fa-envelope" style="font-size:1.5rem; color:var(--accent-blue);"></i><br>Email
                     </a>
-                    <a href="https://www.linkedin.com/in/rathya107/" target="_blank" class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
+                    <a href="https://www.linkedin.com/in/rathya107/" target="_blank" style="text-decoration:none; color:inherit;">
+                        <i class="fab fa-linkedin" style="font-size:1.5rem; color:var(--accent-blue);"></i><br>LinkedIn
+                    </a>
+                    <a href="https://github.com/Egarathya-KP" target="_blank" style="text-decoration:none; color:inherit;">
+                        <i class="fab fa-github" style="font-size:1.5rem; color:var(--accent-blue);"></i><br>GitHub
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="social-icons">
-            <a href="https://github.com/Egarathya-KP" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/rathya107/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
-        <p>&copy; 2023 Egarathya K P. Built with passion and code.</p>
+        <p>&copy; 2023 Egarathya K P | VIT Vellore CSE</p>
     </footer>
 
-    <script>
-        // Simple scroll reveal effect
-        window.addEventListener('scroll', reveal);
-
-        function reveal() {
-            var reveals = document.querySelectorAll('.card, .stat-card');
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var revealTop = reveals[i].getBoundingClientRect().top;
-                var revealPoint = 150;
-
-                if (revealTop < windowHeight - revealPoint) {
-                    reveals[i].style.opacity = "1";
-                    reveals[i].style.transform = "translateY(0)";
-                }
-            }
-        }
-    </script>
 </body>
 </html>
