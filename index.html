@@ -3,412 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Egarathya K P | Portfolio</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
+    <title>Egarathya K P | AI Engineer & CSE Student</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-navy: #0f172a;
             --accent-blue: #2563eb;
-            /* Very light, almost transparent blue shade */
-            --bg-light-blue: #f0f7ff; 
-            --glass-bg: rgba(255, 255, 255, 0.6);
+            --bg-light-blue: #f8fbff; 
+            --glass-bg: rgba(255, 255, 255, 0.7);
             --text-main: #1e293b;
             --text-light: #475569;
             --white: #ffffff;
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
             color: var(--text-main);
-            /* Soft Blue Gradient Background */
-            background: linear-gradient(135deg, #ffffff 0%, #e0f0ff 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #e6f2ff 100%);
             background-attachment: fixed;
+            line-height: 1.6;
         }
 
-        /* --- Global Layout --- */
-        section {
-            padding: 100px 10%;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
+        section { padding: 100px 10%; }
+        .container { max-width: 1200px; margin: 0 auto; }
 
         h2.section-title {
             font-size: 2.2rem;
             color: var(--primary-navy);
-            margin-bottom: 3.5rem;
+            margin-bottom: 3rem;
             text-align: center;
-            letter-spacing: -0.5px;
         }
 
         h2.section-title::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 4px;
-            background: var(--accent-blue);
-            margin: 12px auto;
-            border-radius: 2px;
+            content: ''; display: block; width: 50px; height: 4px;
+            background: var(--accent-blue); margin: 15px auto; border-radius: 2px;
         }
 
         /* --- Navigation --- */
         nav {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(15px); /* Transparent glass effect */
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
             padding: 1rem 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            width: 100%; top: 0; z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        .logo {
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--primary-navy);
-            text-decoration: none;
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 2rem; }
+        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; transition: var(--transition); }
+        .nav-links a:hover { color: var(--accent-blue); }
+
+        /* --- Hero --- */
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .hero h1 { font-size: 4.5rem; color: var(--primary-navy); font-weight: 800; margin-bottom: 10px; }
+        .hero .role { color: var(--accent-blue); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+        .hero .tagline { max-width: 700px; font-size: 1.2rem; color: var(--text-light); margin-bottom: 30px; }
+
+        /* --- Stats/About --- */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .stat-card { 
+            background: var(--glass-bg); padding: 1.5rem; border-radius: 15px; text-align: center;
+            border: 1px solid rgba(255,255,255,0.5); transition: var(--transition);
+        }
+        .stat-card:hover { transform: translateY(-5px); background: white; }
+        .stat-card h3 { color: var(--accent-blue); font-size: 1.8rem; }
+
+        /* --- Certifications (IBM Specialized) --- */
+        .cert-header {
+            background: white; padding: 2rem; border-radius: 20px; 
+            border-left: 5px solid var(--accent-blue); margin-bottom: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .cert-category { background: var(--glass-bg); padding: 1.5rem; border-radius: 15px; border: 1px solid white; }
+        .cert-category h4 { margin-bottom: 1rem; color: var(--accent-blue); border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .cert-list { list-style: none; font-size: 0.9rem; }
+        .cert-list li { margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px; }
+        .cert-list i { color: #10b981; margin-top: 4px; }
+
+        /* --- Projects & Research --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .card { 
+            background: var(--glass-bg); padding: 2rem; border-radius: 20px; 
+            border: 1px solid white; transition: var(--transition); position: relative;
+        }
+        .card:hover { transform: translateY(-10px); background: white; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .badge { 
+            position: absolute; top: 1rem; right: 1rem; background: #e0f2fe; 
+            color: #0369a1; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 700;
         }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
+        .btn { 
+            padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; 
+            display: inline-block; transition: var(--transition); 
         }
+        .btn-blue { background: var(--accent-blue); color: white; }
+        .btn-outline { border: 1px solid var(--accent-blue); color: var(--accent-blue); }
+        .btn:hover { opacity: 0.9; transform: scale(1.05); }
 
-        .nav-links li {
-            margin-left: 2.5rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-blue);
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding-top: 80px;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            color: var(--primary-navy);
-            margin-bottom: 1rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .hero p.role {
-            font-size: 1.1rem;
-            color: var(--accent-blue);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-        }
-
-        .hero p.tagline {
-            max-width: 650px;
-            color: var(--text-light);
-            font-size: 1.1rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .btn {
-            padding: 14px 35px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: var(--accent-blue);
-            color: white;
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 25px rgba(37, 99, 235, 0.3);
-        }
-
-        /* --- About Section --- */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        /* Academic Stats Style */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.2rem;
-        }
-
-        .stat-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            background: rgba(255, 255, 255, 0.9);
-            transform: scale(1.03);
-        }
-
-        .stat-card h3 {
-            color: var(--accent-blue);
-            font-size: 1.6rem;
-            margin-bottom: 5px;
-        }
-
-        .stat-card p {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-light);
-        }
-
-        /* --- Skills Section --- */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.2rem;
-        }
-
-        .skill-badge {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            padding: 12px 25px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .skill-badge:hover {
-            background: var(--accent-blue);
-            color: white;
-            border-color: var(--accent-blue);
-        }
-
-        /* --- Project Cards (Glass Look) --- */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            border-radius: 20px;
-            padding: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            transform: translateY(-12px);
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-        }
-
-        .card-link {
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 1.5rem;
-        }
-
-        /* --- Contact Section --- */
-        .contact-content {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            padding: 3rem;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background: var(--primary-navy);
-            color: rgba(255,255,255,0.7);
-            padding: 4rem 10%;
-            text-align: center;
-        }
+        footer { background: var(--primary-navy); color: white; text-align: center; padding: 3rem; margin-top: 50px; }
 
         @media (max-width: 768px) {
-            .about-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.8rem; }
-            .nav-links { display: none; }
-            section { padding: 80px 5%; }
+            section { padding: 60px 5%; }
+            .cert-header { flex-direction: column; text-align: center; gap: 1rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="logo">Egarathya K P</a>
+        <a href="#" style="font-weight: 800; text-decoration:none; color:inherit;">EKP.</a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certs">Certifications</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <section class="hero">
-        <p class="role">Computer Science Student @ VIT Vellore</p>
+        <p class="role">AI Engineer | CSE @ VIT Vellore</p>
         <h1>Egarathya K P</h1>
-        <p class="tagline">Harnessing AI, Space Physics, and Quantum Mechanics to engineer technology for a better future.</p>
-        <div>
-            <a href="#projects" class="btn btn-primary">Discover My Work</a>
+        <p class="tagline">Specializing in Generative AI, LLM Architecture, and RAG Systems. Bridging the gap between Theoretical Physics and Applied Artificial Intelligence.</p>
+        <div style="display:flex; gap:15px;">
+            <a href="#projects" class="btn btn-blue">View Research & Projects</a>
+            <a href="https://www.linkedin.com/in/rathya107/" class="btn btn-outline">LinkedIn</a>
         </div>
     </section>
 
     <section id="about">
         <div class="container">
-            <h2 class="section-title">Background</h2>
-            <div class="about-grid">
-                <div>
-                    <p style="font-size: 1.1rem; line-height: 1.8;">
-                        I am a first-year Computer Science student at <strong>VIT Vellore</strong> with a relentless drive for academic excellence and technical innovation. 
-                        With a foundation in Python and Data Science, I explore the intersections of <strong>Artificial Intelligence</strong> and <strong>Theoretical Physics</strong>.
-                    </p>
-                    <br>
-                    <p>I am motivated by solving real-world challenges through code, whether it's optimizing crowd management or forecasting complex time-series data.</p>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <h3>9.5</h3>
-                        <p>CGPA</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>90.1%</h3>
-                        <p>JEE PERCENTILE</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>94.4%</h3>
-                        <p>10th GRADE</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>90.4%</h3>
-                        <p>12th GRADE</p>
-                    </div>
-                </div>
+            <h2 class="section-title">Academic Excellence</h2>
+            <div class="stats-grid">
+                <div class="stat-card"><h3>9.5</h3><p>Current CGPA</p></div>
+                <div class="stat-card"><h3>90.1%</h3><p>JEE Percentile</p></div>
+                <div class="stat-card"><h3>94.4%</h3><p>10th Grade</p></div>
+                <div class="stat-card"><h3>90.4%</h3><p>12th Grade</p></div>
+            </div>
+            <div style="margin-top: 3rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <p>Focused on solving complex real-world problems using advanced Deep Learning and LLM fine-tuning. Currently exploring <strong>Hydraulic Fault Detection</strong> and contributing to academic research in AI.</p>
             </div>
         </div>
     </section>
 
-    <section id="skills">
+    <section id="certs" style="background: rgba(255,255,255,0.4);">
         <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-container">
-                <div class="skill-badge"><i class="fab fa-python"></i> Python</div>
-                <div class="skill-badge"><i class="fas fa-brain"></i> Artificial Intelligence</div>
-                <div class="skill-badge"><i class="fas fa-chart-bar"></i> Data Analysis</div>
-                <div class="skill-badge"><i class="fas fa-history"></i> Time Series</div>
-                <div class="skill-badge"><i class="fas fa-microchip"></i> Problem Solving</div>
+            <h2 class="section-title">Professional Training</h2>
+            
+            <div class="cert-header">
+                <div>
+                    <h3 style="color: var(--primary-navy);">IBM Professional Certificate in AI Engineering</h3>
+                    <p style="color: var(--text-light);">Comprehensive specialization in Deep Learning and Generative AI</p>
+                </div>
+                <a href="https://coursera.org/share/68a140cfd18aeb4170e7cb6cfa2766a5" target="_blank" class="btn btn-blue">Verify Certificate</a>
+            </div>
+
+            <div class="cert-grid">
+                <!-- Deep Learning -->
+                <div class="cert-category">
+                    <h4>Deep Learning & Neural Nets</h4>
+                    <ul class="cert-list">
+                        <li><i class="fas fa-check-circle"></i> Machine Learning with Python</li>
+                        <li><i class="fas fa-check-circle"></i> Deep Learning with Keras & TensorFlow</li>
+                        <li><i class="fas fa-check-circle"></i> Neural Networks with PyTorch</li>
+                        <li><i class="fas fa-check-circle"></i> AI Capstone Project</li>
+                    </ul>
+                </div>
+                <!-- Gen AI -->
+                <div class="cert-category">
+                    <h4>Generative AI & LLMs</h4>
+                    <ul class="cert-list">
+                        <li><i class="fas fa-check-circle"></i> LLM Architecture & Data Prep</li>
+                        <li><i class="fas fa-check-circle"></i> Transformers & Language Modeling</li>
+                        <li><i class="fas fa-check-circle"></i> Fine-Tuning Transformers</li>
+                        <li><i class="fas fa-check-circle"></i> Advanced Fine-Tuning for LLMs</li>
+                    </ul>
+                </div>
+                <!-- RAG -->
+                <div class="cert-category">
+                    <h4>AI Agents & RAG</h4>
+                    <ul class="cert-list">
+                        <li><i class="fas fa-check-circle"></i> AI Agents using RAG & LangChain</li>
+                        <li><i class="fas fa-check-circle"></i> Generative AI Apps with LangChain</li>
+                        <li><i class="fas fa-check-circle"></i> Foundational Models for NLP</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Innovative Projects</h2>
-            <div class="grid-container">
+            <h2 class="section-title">Projects & Research</h2>
+            <div class="grid">
+                <!-- Research -->
                 <div class="card">
-                    <h3 style="margin-bottom:10px;">Time Series Forecasting</h3>
-                    <p>Advanced predictive modeling using Machine Learning to identify patterns and forecast future trends in temporal data.</p>
-                    <a href="https://github.com/Egarathya-KP/time-series-forecasting" target="_blank" class="card-link">VIEW PROJECT <i class="fas fa-arrow-right"></i></a>
+                    <span class="badge">In Progress</span>
+                    <h3>Research Paper</h3>
+                    <p style="margin-top:10px;">Currently authoring a research paper focused on applying advanced AI techniques to solve engineering complexities.</p>
                 </div>
+                <!-- Hydraulic Project -->
                 <div class="card">
-                    <h3 style="margin-bottom:10px;">Crowd Density Management</h3>
-                    <p>A smart system leveraging computer vision to monitor and manage human density in real-time for safety and efficiency.</p>
-                    <a href="https://github.com/Egarathya-KP/crowd-density-tracker" target="_blank" class="card-link">VIEW PROJECT <i class="fas fa-arrow-right"></i></a>
+                    <span class="badge">Active Development</span>
+                    <h3>Hydraulic Fault Detection</h3>
+                    <p style="margin-top:10px;">Developing a predictive maintenance system using machine learning to detect and classify faults in hydraulic systems before failure occurs.</p>
+                </div>
+                <!-- Previous Project -->
+                <div class="card">
+                    <h3>Time Series Forecasting</h3>
+                    <p style="margin-top:10px;">ML models for analyzing temporal data patterns to predict future outcomes with high precision.</p>
+                    <a href="https://github.com/Egarathya-KP/time-series-forecasting" class="btn-outline btn" style="margin-top:15px; font-size:0.8rem;">GitHub Repository</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" style="text-align: center;">
         <div class="container">
-            <div class="contact-content">
-                <h2 class="section-title">Let's Connect</h2>
-                <p>Always looking for interesting collaborations in AI and Physics.</p>
-                <div class="contact-links">
-                    <a href="mailto:egarathyakp07@gmail.com" style="text-decoration:none; color:inherit;">
-                        <i class="fas fa-envelope" style="font-size:1.5rem; color:var(--accent-blue);"></i><br>Email
-                    </a>
-                    <a href="https://www.linkedin.com/in/rathya107/" target="_blank" style="text-decoration:none; color:inherit;">
-                        <i class="fab fa-linkedin" style="font-size:1.5rem; color:var(--accent-blue);"></i><br>LinkedIn
-                    </a>
-                    <a href="https://github.com/Egarathya-KP" target="_blank" style="text-decoration:none; color:inherit;">
-                        <i class="fab fa-github" style="font-size:1.5rem; color:var(--accent-blue);"></i><br>GitHub
-                    </a>
-                </div>
+            <h2 class="section-title">Get In Touch</h2>
+            <p>Open for research collaborations and AI engineering opportunities.</p>
+            <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 2rem;">
+                <a href="mailto:egarathyakp07@gmail.com" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/rathya107/" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Egarathya-KP" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-github"></i></a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2023 Egarathya K P | VIT Vellore CSE</p>
+        <p>&copy; 2024 Egarathya K P | VIT Vellore</p>
     </footer>
 
 </body>
