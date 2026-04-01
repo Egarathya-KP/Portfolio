@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Egarathya K P | AI Engineer & CSE Student</title>
+    <title>Egarathya K P | AI Engineer & Researcher</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-navy: #0f172a;
             --accent-blue: #2563eb;
-            --bg-light-blue: #f8fbff; 
             --glass-bg: rgba(255, 255, 255, 0.7);
             --text-main: #1e293b;
             --text-light: #475569;
-            --white: #ffffff;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -57,6 +55,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
 
+        .logo { font-weight: 800; font-size: 1.4rem; color: var(--primary-navy); text-decoration: none; }
         .nav-links { display: flex; list-style: none; }
         .nav-links li { margin-left: 2rem; }
         .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; transition: var(--transition); }
@@ -65,65 +64,62 @@
         /* --- Hero --- */
         .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .hero h1 { font-size: 4.5rem; color: var(--primary-navy); font-weight: 800; margin-bottom: 10px; }
-        .hero .role { color: var(--accent-blue); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
-        .hero .tagline { max-width: 700px; font-size: 1.2rem; color: var(--text-light); margin-bottom: 30px; }
+        .hero .role { color: var(--accent-blue); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; font-size: 1rem; }
+        .hero .tagline { max-width: 750px; font-size: 1.2rem; color: var(--text-light); margin-bottom: 35px; }
 
-        /* --- Stats/About --- */
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        /* --- Stats Card --- */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
         .stat-card { 
-            background: var(--glass-bg); padding: 1.5rem; border-radius: 15px; text-align: center;
+            background: var(--glass-bg); padding: 1.5rem; border-radius: 20px; text-align: center;
             border: 1px solid rgba(255,255,255,0.5); transition: var(--transition);
         }
-        .stat-card:hover { transform: translateY(-5px); background: white; }
-        .stat-card h3 { color: var(--accent-blue); font-size: 1.8rem; }
+        .stat-card h3 { color: var(--accent-blue); font-size: 1.8rem; margin-bottom: 5px; }
+        .stat-card p { font-size: 0.8rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; }
 
-        /* --- Certifications (IBM Specialized) --- */
-        .cert-header {
-            background: white; padding: 2rem; border-radius: 20px; 
-            border-left: 5px solid var(--accent-blue); margin-bottom: 2rem;
-            display: flex; justify-content: space-between; align-items: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-        }
-        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .cert-category { background: var(--glass-bg); padding: 1.5rem; border-radius: 15px; border: 1px solid white; }
-        .cert-category h4 { margin-bottom: 1rem; color: var(--accent-blue); border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        /* --- Certifications --- */
+        .cert-container { background: var(--glass-bg); padding: 2.5rem; border-radius: 25px; border: 1px solid white; margin-bottom: 3rem; }
+        .cert-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1.5rem; }
+        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .cert-group h4 { color: var(--accent-blue); margin-bottom: 1rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
         .cert-list { list-style: none; font-size: 0.9rem; }
-        .cert-list li { margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px; }
+        .cert-list li { margin-bottom: 10px; display: flex; gap: 10px; align-items: flex-start; }
         .cert-list i { color: #10b981; margin-top: 4px; }
 
-        /* --- Projects & Research --- */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
-        .card { 
-            background: var(--glass-bg); padding: 2rem; border-radius: 20px; 
+        /* --- Projects Section --- */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+        .project-card { 
+            background: var(--glass-bg); padding: 2.5rem; border-radius: 25px; 
             border: 1px solid white; transition: var(--transition); position: relative;
+            display: flex; flex-direction: column;
         }
-        .card:hover { transform: translateY(-10px); background: white; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .badge { 
-            position: absolute; top: 1rem; right: 1rem; background: #e0f2fe; 
-            color: #0369a1; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 700;
+        .project-card:hover { transform: translateY(-10px); background: white; box-shadow: 0 20px 50px rgba(0,0,0,0.05); }
+        .project-card h3 { margin-bottom: 1rem; color: var(--primary-navy); font-size: 1.4rem; }
+        .project-card p { color: var(--text-light); margin-bottom: 2rem; font-size: 0.95rem; flex-grow: 1; }
+        .project-badge { 
+            display: inline-block; padding: 5px 12px; border-radius: 50px; 
+            font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 15px;
         }
+        .badge-blue { background: #dbeafe; color: #1e40af; }
+        .badge-purple { background: #f3e8ff; color: #6b21a8; }
 
-        .btn { 
-            padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; 
-            display: inline-block; transition: var(--transition); 
-        }
-        .btn-blue { background: var(--accent-blue); color: white; }
-        .btn-outline { border: 1px solid var(--accent-blue); color: var(--accent-blue); }
-        .btn:hover { opacity: 0.9; transform: scale(1.05); }
+        .btn { padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: 600; transition: var(--transition); display: inline-block; cursor: pointer; }
+        .btn-primary { background: var(--accent-blue); color: white; border: none; }
+        .btn-outline { border: 1.5px solid var(--accent-blue); color: var(--accent-blue); }
+        .btn:hover { transform: scale(1.03); opacity: 0.9; }
 
-        footer { background: var(--primary-navy); color: white; text-align: center; padding: 3rem; margin-top: 50px; }
+        footer { background: var(--primary-navy); color: white; text-align: center; padding: 4rem; margin-top: 50px; }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
-            section { padding: 60px 5%; }
-            .cert-header { flex-direction: column; text-align: center; gap: 1rem; }
+            .hero h1 { font-size: 3rem; }
+            section { padding: 80px 5%; }
+            .cert-header { flex-direction: column; text-align: center; gap: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" style="font-weight: 800; text-decoration:none; color:inherit;">EKP.</a>
+        <a href="#" class="logo">EKP.</a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#certs">Certifications</a></li>
@@ -133,116 +129,119 @@
     </nav>
 
     <section class="hero">
-        <p class="role">AI Engineer | CSE @ VIT Vellore</p>
+        <p class="role">First Year CSE Student @ VIT Vellore</p>
         <h1>Egarathya K P</h1>
-        <p class="tagline">Specializing in Generative AI, LLM Architecture, and RAG Systems. Bridging the gap between Theoretical Physics and Applied Artificial Intelligence.</p>
+        <p class="tagline">Aspiring AI Engineer specializing in LLMs, RAG frameworks, and Deep Learning. Deeply interested in the intersection of Space Physics and Quantum Mechanics.</p>
         <div style="display:flex; gap:15px;">
-            <a href="#projects" class="btn btn-blue">View Research & Projects</a>
-            <a href="https://www.linkedin.com/in/rathya107/" class="btn btn-outline">LinkedIn</a>
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="https://www.linkedin.com/in/rathya107/" target="_blank" class="btn btn-outline">LinkedIn Profile</a>
         </div>
     </section>
 
     <section id="about">
         <div class="container">
-            <h2 class="section-title">Academic Excellence</h2>
+            <h2 class="section-title">Academic Profile</h2>
             <div class="stats-grid">
                 <div class="stat-card"><h3>9.5</h3><p>Current CGPA</p></div>
                 <div class="stat-card"><h3>90.1%</h3><p>JEE Percentile</p></div>
                 <div class="stat-card"><h3>94.4%</h3><p>10th Grade</p></div>
                 <div class="stat-card"><h3>90.4%</h3><p>12th Grade</p></div>
             </div>
-            <div style="margin-top: 3rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <p>Focused on solving complex real-world problems using advanced Deep Learning and LLM fine-tuning. Currently exploring <strong>Hydraulic Fault Detection</strong> and contributing to academic research in AI.</p>
-            </div>
         </div>
     </section>
 
-    <section id="certs" style="background: rgba(255,255,255,0.4);">
+    <section id="certs">
         <div class="container">
-            <h2 class="section-title">Professional Training</h2>
-            
-            <div class="cert-header">
-                <div>
-                    <h3 style="color: var(--primary-navy);">IBM Professional Certificate in AI Engineering</h3>
-                    <p style="color: var(--text-light);">Comprehensive specialization in Deep Learning and Generative AI</p>
+            <h2 class="section-title">AI Engineering Specialization</h2>
+            <div class="cert-container">
+                <div class="cert-header">
+                    <div>
+                        <h3 style="font-size: 1.5rem;">IBM Professional Certificate in AI Engineering</h3>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">Verified Specialization in Generative AI & Deep Learning</p>
+                    </div>
+                    <a href="https://coursera.org/share/68a140cfd18aeb4170e7cb6cfa2766a5" target="_blank" class="btn btn-primary">Verify Credential</a>
                 </div>
-                <a href="https://coursera.org/share/68a140cfd18aeb4170e7cb6cfa2766a5" target="_blank" class="btn btn-blue">Verify Certificate</a>
-            </div>
-
-            <div class="cert-grid">
-                <!-- Deep Learning -->
-                <div class="cert-category">
-                    <h4>Deep Learning & Neural Nets</h4>
-                    <ul class="cert-list">
-                        <li><i class="fas fa-check-circle"></i> Machine Learning with Python</li>
-                        <li><i class="fas fa-check-circle"></i> Deep Learning with Keras & TensorFlow</li>
-                        <li><i class="fas fa-check-circle"></i> Neural Networks with PyTorch</li>
-                        <li><i class="fas fa-check-circle"></i> AI Capstone Project</li>
-                    </ul>
-                </div>
-                <!-- Gen AI -->
-                <div class="cert-category">
-                    <h4>Generative AI & LLMs</h4>
-                    <ul class="cert-list">
-                        <li><i class="fas fa-check-circle"></i> LLM Architecture & Data Prep</li>
-                        <li><i class="fas fa-check-circle"></i> Transformers & Language Modeling</li>
-                        <li><i class="fas fa-check-circle"></i> Fine-Tuning Transformers</li>
-                        <li><i class="fas fa-check-circle"></i> Advanced Fine-Tuning for LLMs</li>
-                    </ul>
-                </div>
-                <!-- RAG -->
-                <div class="cert-category">
-                    <h4>AI Agents & RAG</h4>
-                    <ul class="cert-list">
-                        <li><i class="fas fa-check-circle"></i> AI Agents using RAG & LangChain</li>
-                        <li><i class="fas fa-check-circle"></i> Generative AI Apps with LangChain</li>
-                        <li><i class="fas fa-check-circle"></i> Foundational Models for NLP</li>
-                    </ul>
+                <div class="cert-grid">
+                    <div class="cert-group">
+                        <h4>Deep Learning Foundations</h4>
+                        <ul class="cert-list">
+                            <li><i class="fas fa-check-circle"></i> Machine Learning with Python</li>
+                            <li><i class="fas fa-check-circle"></i> Deep Learning with Keras & TensorFlow</li>
+                            <li><i class="fas fa-check-circle"></i> Neural Networks with PyTorch</li>
+                            <li><i class="fas fa-check-circle"></i> AI Capstone Project</li>
+                        </ul>
+                    </div>
+                    <div class="cert-group">
+                        <h4>Generative AI & LLMs</h4>
+                        <ul class="cert-list">
+                            <li><i class="fas fa-check-circle"></i> LLM Architecture & Data Preparation</li>
+                            <li><i class="fas fa-check-circle"></i> Transformers & Language Modeling</li>
+                            <li><i class="fas fa-check-circle"></i> Engineering & Fine-Tuning Transformers</li>
+                            <li><i class="fas fa-check-circle"></i> Advanced Fine-Tuning for LLMs</li>
+                        </ul>
+                    </div>
+                    <div class="cert-group">
+                        <h4>RAG & AI Agents</h4>
+                        <ul class="cert-list">
+                            <li><i class="fas fa-check-circle"></i> AI Agents using RAG and LangChain</li>
+                            <li><i class="fas fa-check-circle"></i> Gen AI Apps with RAG & LangChain</li>
+                            <li><i class="fas fa-check-circle"></i> Foundational Models for NLP</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" style="background: rgba(255,255,255,0.3);">
         <div class="container">
-            <h2 class="section-title">Projects & Research</h2>
-            <div class="grid">
-                <!-- Research -->
-                <div class="card">
-                    <span class="badge">In Progress</span>
-                    <h3>Research Paper</h3>
-                    <p style="margin-top:10px;">Currently authoring a research paper focused on applying advanced AI techniques to solve engineering complexities.</p>
-                </div>
-                <!-- Hydraulic Project -->
-                <div class="card">
-                    <span class="badge">Active Development</span>
-                    <h3>Hydraulic Fault Detection</h3>
-                    <p style="margin-top:10px;">Developing a predictive maintenance system using machine learning to detect and classify faults in hydraulic systems before failure occurs.</p>
-                </div>
-                <!-- Previous Project -->
-                <div class="card">
+            <h2 class="section-title">Key Projects & Research</h2>
+            <div class="project-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <span class="project-badge badge-blue">Machine Learning</span>
                     <h3>Time Series Forecasting</h3>
-                    <p style="margin-top:10px;">ML models for analyzing temporal data patterns to predict future outcomes with high precision.</p>
-                    <a href="https://github.com/Egarathya-KP/time-series-forecasting" class="btn-outline btn" style="margin-top:15px; font-size:0.8rem;">GitHub Repository</a>
+                    <p>A comprehensive predictive model developed using Python to analyze temporal data patterns. Applied ML techniques to forecast future trends with high accuracy.</p>
+                    <a href="https://github.com/Egarathya-KP/time-series-forecasting" target="_blank" class="btn btn-outline" style="font-size: 0.8rem; width: fit-content;">Source Code <i class="fab fa-github"></i></a>
                 </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <span class="project-badge badge-blue">Computer Vision</span>
+                    <h3>Crowd Density Management</h3>
+                    <p>An intelligent system designed to monitor and manage human density in real-time. Built to enhance safety and operational efficiency in high-traffic areas.</p>
+                    <a href="https://github.com/Egarathya-KP/crowd-density-tracker" target="_blank" class="btn btn-outline" style="font-size: 0.8rem; width: fit-content;">Source Code <i class="fab fa-github"></i></a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <span class="project-badge badge-purple">Research Initiative</span>
+                    <h3>Hydraulic Fault Detection</h3>
+                    <p>Current focus on a research paper regarding AI-driven predictive maintenance. This project utilizes deep learning to detect and classify faults in hydraulic systems before they occur.</p>
+                    <div style="font-style: italic; color: var(--accent-blue); font-size: 0.85rem; font-weight: 600;">
+                        <i class="fas fa-microscope"></i> Research Paper in Progress
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section id="contact" style="text-align: center;">
-        <div class="container">
+    <section id="contact">
+        <div class="container" style="text-align: center;">
             <h2 class="section-title">Get In Touch</h2>
-            <p>Open for research collaborations and AI engineering opportunities.</p>
-            <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 2rem;">
-                <a href="mailto:egarathyakp07@gmail.com" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/rathya107/" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Egarathya-KP" style="color: var(--accent-blue); font-size: 1.5rem;"><i class="fab fa-github"></i></a>
+            <p style="margin-bottom: 2rem;">Interested in AI research or collaborative projects? Reach out via the channels below.</p>
+            <div style="display: flex; justify-content: center; gap: 3rem;">
+                <a href="mailto:egarathyakp07@gmail.com" style="color: var(--accent-blue); font-size: 2rem;"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/rathya107/" target="_blank" style="color: var(--accent-blue); font-size: 2rem;"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Egarathya-KP" target="_blank" style="color: var(--accent-blue); font-size: 2rem;"><i class="fab fa-github"></i></a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Egarathya K P | VIT Vellore</p>
+        <p>&copy; 2024 Egarathya K P | VIT Vellore | Computer Science & Engineering</p>
     </footer>
 
 </body>
